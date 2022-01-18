@@ -114,4 +114,78 @@
     </section>
     
 </body>
+
+<script>
+    /*Psuade code 
+
+        if noodle == null
+            buy mie with money
+            if money != null
+                buy mie in supermarket
+                
+            else
+                end    
+        else
+            input plate,wajan,spoon ,fork,stove,elpiji :v
+            if gas != null
+                while water != boiled
+                    wait
+                water boiled
+                    put on wajan boiled water
+                    put powder,sauce and oil to plate
+                    while noodle != done
+                        wait
+                    else
+                        put on plat
+                        mix with noodle , powder,sauce and oil
+                        taste  the noodle
+            
+    */
+
+    var noodle = 1
+    var money = 10000
+    var gas = 1
+    var status = "Boiled"
+
+    while (noodle > 0){
+        if (noodle < 1){
+            if (money != null || money > 0){
+                noodle += 1
+                console.log("Beli 1 mie")
+
+            }
+            else{
+                console.log("Nggk usah masak")
+            }
+        }else{
+            console.log("Masak donk")
+            console.log("Siapkan sendok,garpu dan piring ya")
+            var sendok = "sendok"
+            var garpu = "garpu"
+            var piring = "piring"
+            if (gas < 1){
+                if (money != null || money > 0){
+                gas += 1
+                console.log("Beli 1 gas")
+
+                }
+                else{
+                    console.log("Nggk usah masak")
+                }
+            }else{
+                console.log("Memasak ya kakak")
+                if(status == "Boiled"){
+                    console.log("Masukkan mie kedalam wajan yang sudah ada air yang mendidih")
+                    console.log("Buka bungkusnya ya kawan2")
+                }else{
+                    console.log("Ditunggu ya kakak")
+                }
+                
+            }
+            
+        }
+    }
+    
+
+</script>
 </html>
