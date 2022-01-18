@@ -146,6 +146,7 @@
     var money = 10000
     var gas = 1
     var status = "Boiled"
+    var statusCook = "Done"
 
     while (noodle > 0){
         if (noodle < 1){
@@ -177,6 +178,12 @@
                 if(status == "Boiled"){
                     console.log("Masukkan mie kedalam wajan yang sudah ada air yang mendidih")
                     console.log("Buka bungkusnya ya kawan2")
+                    if(statusCook == "Done"){
+                        console.log("Tiriskan ke dalam piring")
+                        console.log("Dicampur mie dan bumbu ya memakai sendok dan garpu")
+                        console.log("Silahkan dinikmati")
+                        noodle -= 1
+                    }
                 }else{
                     console.log("Ditunggu ya kakak")
                 }
