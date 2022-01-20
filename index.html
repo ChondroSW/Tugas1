@@ -258,11 +258,87 @@
            
         // }
 
-        let nama = ["Chondro","Satrio","Wibowo","Mantap"]
+        // let nama = ["Chondro","Satrio","Wibowo","Mantap"]
 
-        for(i = 0;i < nama.length;i++){
-            console.log(nama[i])
+        // for(i = 0;i < nama.length;i++){
+        //     console.log(nama[i])
+        // }
+
+        let data1 = [2,5,10,'Ini dia','Data',100,38]
+        let data2 = [3,100,283,'saya','adalah','kapiten',75]
+        let data3 = [29,12,39,'ini','saya',85]
+        let data4 = [20,12,43,54,24]
+        let data5 = [20,'empat','limat',8,29,30]
+        let data6 = ['data','empat',8,3,100,8,100,3]
+        var b = 2;
+        var a = 22;
+        var x = 20;
+        var c = 3
+
+        function soal1(data = []){
+            if(data.length < 50){
+                for(let i in data){
+                    console.log(data[i])
+                }
+            }else{
+                console.log(false)
+            }
         }
+
+        function soal2(data = []){
+            if((b + data.length) != 32){
+                for(let i in data){
+                    console.log(data[i])
+                }
+            }else{
+                console.log(false)
+            }
+        }
+
+        function soal3(data = [],a){
+            if((data.length + a) == 28){
+                for(let i in data){
+                    console.log(data[i])
+                }
+            }else{
+                console.log(false)
+            }
+        }
+
+        function soal4(data = []){
+            if((data.length + 1) != 35){
+                for(let i in data){
+                    console.log(data[i])
+                }
+            }else{
+                console.log(false)
+            }
+        }
+
+        function soal5(data = []){
+            if((x + data.length) != 35){
+                for(let i in data){
+                    console.log(data[i])
+                }
+            }else{
+                console.log(false)
+            }
+        }
+
+        function soal6(data = []){
+            if((c + data.length + a) != 25){
+                for(let i in data){
+                    console.log(data[i])
+                }
+            }
+            else{
+                console.log(false)
+            }
+        }
+
+     
+        soal3(data3,a)
+        
 
 
         
