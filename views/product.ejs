@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <section id="section-1" style="display:inline-flexbox;">
+        
+        <div class="imageData" style="width:100%;margin: -0px;">
+            <img class="imageBackground" src="/product_background.png" style="width: 100%;height: 120%; margin: -0px;" alt="background1layer">
+            <div class="navigation"style="display: flex;">
+                <div class="left" style="width: 50%;">
+                    Logonya
+                </div>
+                <div class="right">
+                    <div class="button1" ><p style="color: #fff;">ABOUT</p></div>
+                           
+                    <div class="button2"><p style="color: #fff;">ARTICLES</p></div>
+                    <div style="width: 120px;height: 48px; margin-top: 10px;margin-left: 40px; background-color: #6CBE5E; border: 1px solid #000; font-size: 16px;">
+                        <p style="color: #fff; align-items: center; text-align: center;">SUBSCRIBE</p>
+                    </div>
+               
+   
+            
+                    
+                   
+                    
+                </div>
+            </div>
+            <div class="dataInformation">
+                <h1 style="color: #fff;">All Product Here</h1>
+                <h3 style="color: #fff;">ALL ABOUT ART OF NATURE</h3>
+                <hr>
+            </div>
+            
+        </div>
+    </section>
+    <section>
+        <h2 style="width: 100%;text-align: center;">Products</h2>
+    </section>
+    <section style="width: 100%; align-items: center; ">
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box4"></div>
+       
+    </section>
+    <section>
+        <div class="box" id="box5"></div>
+        <div class="box" id="box6"></div>
+        <div class="box" id="box7"></div>
+       
+    </section>
+    <section>
+        <div class="box" id="box8"></div>
+        <div class="box" id="box9"></div>
+        <div class="box" id="box10"></div>
+    </section>
+
+    <script>
+        document.body.style.textAlign = "center";
+        const color = [
+    {colorName: "White",color:"white",image:""},
+    {colorName: "Emerald",color:"#2ecc71",image:""},
+    {colorName: "Pertevier",color:"#3498db",image:""},
+    {colorName: "Midnight",color:"#2c3e50",image:""},
+    {colorName: "Purple",color:"#655D8A",image:""},
+    {colorName: "Brown",color:"#694E4E",image:""},
+    {colorName: "Yellow",color:"#FFE162",image:""},
+    {colorName: "Orange",color:"#e67e22",image:""},
+    {colorName: "Brownies",color:"#4C0027",image:""},
+    {colorName: "Grey",color:"#D3DEDC",image:""},
+
+];
+
+$(document).ready(function(){
+    $(".box").each(function(i){
+        $(this).html();
+        $(this).css("margin","50px");
+        $(this).css("background-color",color[i].color);
+        $(this).css("width","100px");
+        $(this).css("height","300px")
+        $(this).css("display","inline-block");
+        
+    });
+});
+
+    </script>
+    
+</body>
+</html>
