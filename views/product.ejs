@@ -14,7 +14,7 @@
         <div class="imageData" style="width:100%;margin: -0px;">
             <img class="imageBackground" src="/product_background.png" style="width: 100%;height: 120%; margin: -0px;" alt="background1layer">
             <div class="navigation"style="display: flex;">
-                <div class="left" style="width: 50%;">
+                <div class="left" style="width: 50%;text-align: left;">
                     Logonya
                 </div>
                 <div class="right">
@@ -44,50 +44,92 @@
         <h2 style="width: 100%;text-align: center;">Products</h2>
     </section>
     <section style="width: 100%; align-items: center; ">
-        <div class="box" id="box2"></div>
-        <div class="box" id="box3"></div>
-        <div class="box" id="box4"></div>
+        <div class="box" id="box2">
+            <img class="imageProduct"/>
+        </div>
+        <div class="box" id="box3">
+            <img class="imageProduct"/>
+        </div>
+        <div class="box" id="box4">
+            <img class="imageProduct"/>
+        </div>
        
     </section>
     <section>
-        <div class="box" id="box5"></div>
-        <div class="box" id="box6"></div>
-        <div class="box" id="box7"></div>
+        <div class="box" id="box5">
+            <img class="imageProduct"/>
+        </div>
+        <div class="box" id="box6">
+            <img class="imageProduct"/>
+        </div>
+        <div class="box" id="box7">
+            <img class="imageProduct"/>
+        </div>
        
     </section>
     <section>
-        <div class="box" id="box8"></div>
-        <div class="box" id="box9"></div>
-        <div class="box" id="box10"></div>
+        <div class="box" id="box8">
+            <img class="imageProduct"/>
+        </div>
+        <div class="box" id="box9">
+            <img class="imageProduct"/>
+        </div>
+        <div class="box" id="box10">
+            <img class="imageProduct"/>
+        </div>
     </section>
 
     <script>
         document.body.style.textAlign = "center";
         const color = [
-    {colorName: "White",color:"white",image:""},
-    {colorName: "Emerald",color:"#2ecc71",image:""},
-    {colorName: "Pertevier",color:"#3498db",image:""},
-    {colorName: "Midnight",color:"#2c3e50",image:""},
-    {colorName: "Purple",color:"#655D8A",image:""},
-    {colorName: "Brown",color:"#694E4E",image:""},
-    {colorName: "Yellow",color:"#FFE162",image:""},
-    {colorName: "Orange",color:"#e67e22",image:""},
-    {colorName: "Brownies",color:"#4C0027",image:""},
-    {colorName: "Grey",color:"#D3DEDC",image:""},
+    {colorName: "White",color:"white",image:"/3.png"},
+    {colorName: "Emerald",color:"#2ecc71",image:"/1.png"},
+    {colorName: "Pertevier",color:"#3498db",image:"/2.png"},
+    {colorName: "Midnight",color:"#2c3e50",image:"/4.png"},
+    {colorName: "Purple",color:"#655D8A",image:"/5.png"},
+    {colorName: "Brown",color:"#694E4E",image:"/6.png"},
+    {colorName: "Yellow",color:"#FFE162",image:"/7.png"},
+    {colorName: "Orange",color:"#e67e22",image:"/8.png"},
+    {colorName: "Brownies",color:"#4C0027",image:"/1.png"},
+    {colorName: "Grey",color:"#D3DEDC",image:"/2.png"},
 
 ];
+var a = 'Aku mencoba';
+var b = 'TApi harus bisa';
 
-$(document).ready(function(){
-    $(".box").each(function(i){
+a += b;
+
+console.log(a)
+fetch('/tester').then(response=>{
+    return response.json();
+}).then(data=>{
+    console.log(data);
+    for(let i = 0; i < data.results.length ;i++){
+   $(document).ready(function(){
+    $(".imageProduct").each(function(i){
         $(this).html();
         $(this).css("margin","50px");
-        $(this).css("background-color",color[i].color);
-        $(this).css("width","100px");
-        $(this).css("height","300px")
+        $(this).attr("src",`${data.results[i].image}`);
+        $(this).css("background-color",data.results[i].color);
+        $(this).css("width","300px");
+        $(this).css("height","400px");
         $(this).css("display","inline-block");
-        
     });
+});      
+    }
 });
+// $(document).ready(function(){
+//     $(".box").each(function(i){
+//         $(this).html();
+//         $(this).css("margin","50px");
+//         $(this).css("background-image",`url('${color[i].image}')`);
+//         $(this).css("background-color",color[i].color);
+//         $(this).css("width","300px");
+//         $(this).css("height","400px")
+//         $(this).css("display","inline-block");
+        
+//     });
+// });
 
     </script>
     
