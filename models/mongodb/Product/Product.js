@@ -1,3 +1,4 @@
+const { Int32 } = require('mongodb')
 const Mongoose = require('mongoose')
 
 var Schema = new Mongoose.Schema({

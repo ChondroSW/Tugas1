@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Apps Kita</title>
+</head>
+<body>
+<form action="/login-post" method="post">
+    <div>
+        <label for="">Username</label>
+        <input type="text" id="username" name="username" placeholder="Masukkan Username">
+
+    </div>
+    <div>
+        <label for="">Password</label>
+        <input type="text" id="password" name="password" placeholder="Masukkan Password">
+        
+    </div>
+    <button onclick="loginButton()">Chondro</button>
+
+</form>
+<script>
+    function setCookie(name,value,days){
+        var expires = "";
+        if(days){
+            var date = new Date();
+            date.setTime(date.getTime() + (days*24*60*60))
+            expires = "; expires="+date.toUTCString();
+        }
+
+        document.cookie = name+"="+(value || "")+expires+"; path=/";
+    }
+
+    async function loginButton(){
+        let dataPassing = {
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },body: JSON.stringify({
+                username:document.querySelector("#username").value,
+                password:document.querySelector("#password").value
+            })
+        }
+
+        let dataLogin = await fetch('http://localhost:7777/api/login',dataPassing).then(response=> response.json()).catch(err=>false);
+        if(dataLogin == null){
+            alert("Failed Login")
+        }else{
+            setCookie("token",dataLogin.result,1)
+        }
+    }
+</script>
+</body>
+</html>
